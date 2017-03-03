@@ -1,0 +1,16 @@
+<div class="todo-item" [ngClass]="{'completed':todo.completed, 'time':todo.time}">
+  <button class="checkbox icon" (click)="onToggle()">
+    <i class="material-icons">{{ todo.completed ? 'check_box' : 'check_box_outline_blank'}}</i>
+  </button>
+
+  <span class="title">{{ todo.title }}</span>
+  <button class="checkbox icon" (click)="onTimer(); tickss()">
+    <i class="material-icons">{{ todo.time ? 'pause_circle_outline' : 'play_circle_outline'}}</i>
+  </button>
+  <span class="timer" *ngIf="todo.time">{{ticks}}</span>
+  <div class="actions">
+      <button class="delete icon" (click)="onDelete(todo)">
+      <i class="material-icons">delete</i>
+    </button>
+  </div>
+</div>
